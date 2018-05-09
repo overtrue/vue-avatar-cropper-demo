@@ -1,6 +1,6 @@
-# test-project
+# Vue-avatar-cropper demo
 
-> A Vue.js project
+> A Vue.js demo project for Vue-avatar-cropper.
 
 ## Build Setup
 

@@ -3,7 +3,7 @@
     <div class="card-body">
       <img :src="user.avatar" class="card-img avatar" />
       <div class="card-img-overlay">
-        <button class="btn btn-outline-primary btn-sm" id="pick-avatar">Select an new image</button>
+        <button class="btn btn-primary btn-sm" id="pick-avatar">Select an new image</button>
       </div>
       <h5 class="card-title mb-0">{{ user.nickname }}</h5>
       <div class="text-muted">{{ user.username }}</div>
@@ -64,8 +64,7 @@ export default {
   margin: 0 auto;
 }
 .avatar {
-  width: 200px;
-  height: 200px;
+  width: 160px;
   border-radius: 6px;
   display: block;
   margin: 20px auto;
