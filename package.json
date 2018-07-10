@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "vue": "^2.5.2",
-    "vue-avatar-cropper": "0.0.27"
+    "vue-avatar-cropper": "^0.0.28"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
