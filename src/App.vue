@@ -1,8 +1,6 @@
 <template>
-  <div id="app">
-    <form method="post">
-      <avatar/>
-    </form>
+  <div id="app" class="p-8">
+    <avatar/>
   </div>
 </template>
 
@@ -16,13 +14,3 @@ export default {
   }
 }
 </script>
-
-<style>
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

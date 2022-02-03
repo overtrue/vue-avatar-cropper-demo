@@ -1,20 +1,22 @@
 <template>
-  <div class="card vue-avatar-cropper-demo text-center">
-    <div class="card-body">
-      <img :src="user.avatar" class="card-img avatar" />
-      <div class="card-img-overlay">
-        <button class="btn btn-primary btn-sm" id="pick-avatar">Select an new image</button>
+  <div class="border rounded vue-avatar-cropper-demo text-center">
+    <div class="p-6">
+      <div class="relative">
+        <img :src="user.avatar" class="avatar" />
+        <div class="absolute bottom-0 left-0 right-0">
+          <button class="bg-blue-400 text-white px-4 py-2 rounded hover:bg-blue-700" @click="showCropper=true">Select an new image</button>
+        </div>
       </div>
-      <h5 class="card-title mb-0">{{ user.nickname }}</h5>
-      <div class="text-muted">{{ user.username }}</div>
+      <h5 class="font-bold mb-0">{{ user.nickname }}</h5>
+      <div class="text-gray-500">{{ user.username }}</div>
     </div>
-    <div class="card-footer text-muted" v-html="message"></div>
+    <div class="border-t p-6 text-gray-500" v-html="message"></div>
     <avatar-cropper
         @uploading="handleUploading"
         @uploaded="handleUploaded"
         @completed="handleCompleted"
         @error="handlerError"
-        trigger="#pick-avatar"
+        v-model="showCropper"
         upload-url="https://demo.overtrue.me/upload.php" />
   </div>
 </template>
@@ -26,6 +28,7 @@ export default {
   components: { AvatarCropper },
   data() {
     return {
+      showCropper: false,
       message: "ready",
       user: {
         id: 1,
@@ -40,7 +43,7 @@ export default {
       this.message = "uploading...";
     },
     handleUploaded(response) {
-      if (response.status == "success") {
+      if (response.status === "success") {
         this.user.avatar = response.url;
         // Maybe you need call vuex action to
         // update user avatar, for example:
